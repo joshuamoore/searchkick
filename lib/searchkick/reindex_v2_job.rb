@@ -1,6 +1,6 @@
 module Searchkick
   class ReindexV2Job < ActiveJob::Base
-    queue_as :default
+    queue_as :"#{Rails.env}-default"
 
     def perform(klass, id)
       model = klass.constantize
